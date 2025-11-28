@@ -32,7 +32,7 @@ var robot = new (function () {
   };
 
   this.jump = function (powerup, type) {
-    this.velocityForY = -17.4;
+    this.velocityForY = -13.4;
 
     if (powerup === "shoes" && this.boots == 0) {
       this.bootsJumpCount += 5;
