@@ -16,7 +16,7 @@ window.addEventListener("touchstart", this.touchStarted);
 window.addEventListener("touchcancel", this.touchCanceled);
 window.addEventListener("touchend", this.touchCanceled);
 
-const gravity = 0.18;
+const gravity = 0.25;
 var leftKeyDown = false;
 var rightKeyDown = false;
 var end = false;
