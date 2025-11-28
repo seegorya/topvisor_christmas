@@ -3,7 +3,7 @@ var robot = new (function () {
   this.y = 500;
   this.img = new Image();
   this.img.src = "img/robot.png";
-  this.width = 80; // мне размер больше не нравится но тоже попробовать
+  this.width = 80;
   this.height = 80;
   this.velocityForX = 7;
   this.velocityForY = 0;
@@ -17,17 +17,17 @@ var robot = new (function () {
     return (
       r.x < p.x + p.width - 20 &&
       r.x + r.width > p.x + 20 &&
-      r.y < p.y + p.height - r.height &&
-      r.y > p.y - r.height
+      r.y + r.height < p.y + p.height  &&
+      r.y + r.height > p.y
     );
   };
 
   this.touchMonster = function (r, m) {
     return (
-      r.x + r.width > m.x + 10 &&
-      r.x < m.x + m.width - 10 &&
-      r.y < m.y + m.height &&
-      r.y > m.y - m.height
+      parseInt(r.x) + parseInt(r.width) - 13 > parseInt(m.x) &&
+      parseInt(r.x) + 13 < parseInt(m.x) + parseInt(m.width) &&
+      parseInt(r.y) + parseInt(r.height) > parseInt(m.y) &&
+      parseInt(r.y) + 25 < parseInt(m.y) + parseInt(m.height)
     );
   };
 
@@ -37,13 +37,11 @@ var robot = new (function () {
     if (powerup === "shoes" && this.boots == 0) {
       this.bootsJumpCount += 5;
       this.boots = 1;
-      //presents+=1;
     }
 
     if (type != "break") {
       if (powerup === "spring") {
         this.velocityForY = -20;
-        //presents+=1;
       }
     }
 
@@ -57,7 +55,6 @@ var robot = new (function () {
     if (powerup === "shield" && this.shield == 0) {
       this.shieldJumpCount += Math.floor(Math.random() * 7) + 6;
       this.shield = 1;
-      //presents+=1;
     }
 
     if (this.shieldJumpCount > 0) {

@@ -127,7 +127,7 @@ platforms.push(new platform());
 platforms[0].x = 250;
 platforms[0].y = 650;
 platforms[0].monster = 0;
-platforms[0].type = 0;
+platforms[0].type = 'normal';
 platforms[0].powerup = 0;
 
 platformGo.platformsSet();
@@ -206,7 +206,7 @@ function update() {
         }
       }
     }
-    if (robot.y > platforms[i].y) {
+    if (robot.y + robot.height - 20 > platforms[i].y) {
       if (platforms[i].monster !== 0 && robot.shieldJumpCount <= 0) {
         if (robot.touchMonster(robot, platforms[i])) {
           end = true;

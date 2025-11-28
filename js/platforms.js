@@ -23,8 +23,17 @@ class platform {
       }
 
       if (this.monster === 0) {
+        this.width = 95;
+        this.height = 27;
         context.drawImage(this.img, this.x, this.y, this.width, this.height);
       } else {
+        if (this.monster == "big"){
+          this.width = 80;
+          this.height = 80;
+        } else {
+          this.width = 60;
+          this.height = 60;
+        }
         monsterFunctions[this.monster].draw(this.x, this.y);
       }
 
