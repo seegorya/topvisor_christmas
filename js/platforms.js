@@ -2,14 +2,14 @@ class platform {
   constructor() {
     this.x;
     this.y;
-    this.width = 95; // 100 или 90
-    this.height = 27; // показать с 25 и с 30, мне 25 больше нравится
+    this.width = 95;
+    this.height = 27;
     this.powerup;
     this.type;
     this.img = new Image();
     this.monster;
     this.direction = "right";
-    this.moveTime = 9;
+    this.moveTime = 6;
     this.speed;
     this.imgaddon = new Image();
 
@@ -65,7 +65,7 @@ class platform {
 
           if (this.moveTime === 0) {
             this.direction = "left";
-            this.moveTime = 9; // причина тряски
+            this.moveTime = 6; // причина тряски
           }
         } else {
           this.x -= 1;
@@ -73,7 +73,7 @@ class platform {
 
           if (this.moveTime === 0) {
             this.direction = "right";
-            this.moveTime = 9;
+            this.moveTime = 6;
           }
         }
       }
@@ -115,7 +115,7 @@ class platform {
           if (platforms[i].type != "break") {
             platforms[i].powerup = powerup();
 
-            if (platforms[i].powerup === 0 && score > 1300) { // генерация монстров на начале да нет
+            if (platforms[i].powerup === 0 && score > 1300) {
               platforms[i].monster = monster();
             }
           }

@@ -20,8 +20,8 @@ function powerup() {
 
 function monster() {
   var chances = {
-    small: 55 - (difficulty * 5), // частоты монстров в целом
-    big: 90 - (difficulty * 7),
+    small: 5, //55 - (difficulty * 5), // частоты монстров в целом
+    big: 50 - (difficulty * 6),
   };
 
   if (Math.round(Math.random() * chances["small"]) === 0) {

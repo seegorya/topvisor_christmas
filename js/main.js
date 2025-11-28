@@ -8,7 +8,7 @@ if (getDocHeight() > 1230) screenHeight = 1200;
 canvas.width = screenWidth;
 canvas.height = screenHeight;
 canvas.style =
-  "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:2px solid white; background: linear-gradient(#07091c, #023380, #115bc4, #8ec6fc);";
+  "position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; margin: auto; border:4px solid white; background: linear-gradient(#07091c, #023380, #115bc4, #8ec6fc);";
 document.body.appendChild(canvas);
 window.addEventListener("keydown", this.keydown, false);
 window.addEventListener("keyup", this.keyup, false);
@@ -112,12 +112,12 @@ function showScore() {
     score = Math.round(total);
   }
 
-  context.font = "36px Arial";
+  context.font = "30px Arial";
   context.fillStyle = "white";
   context.textAlign = "left";
-  context.fillText("Счет: " + score, 15, 40);
+  context.fillText("Счёт: " + score, 15, 40);
 
-  context.font = "26px Arial";
+  context.font = "30px Arial";
   context.fillStyle = "white";
   context.textAlign = "left";
   context.fillText("Подарков: " + presents, 15, 80);
@@ -154,9 +154,9 @@ function update() {
     }
     total -= robot.velocityForY;
   } else {
-    context.font = "60px Arial";
-    //context.shadowBlur = 20; // вариант 1, обяз показать что все будет светиться
-    //context.shadowColor = '#FFFFFF';
+    context.font = "45px Arial";
+    context.shadowBlur = 20;
+    context.shadowColor = '#FFFFFF';
     context.textAlign = "center";
     context.fillStyle = "#FF0400";
     context.textAlign = "center";
@@ -165,12 +165,12 @@ function update() {
     context.lineWidth = 8;
     context.lineJoin="round";
     context.miterLimit=2;
-    context.strokeText("You Died!", screenWidth / 2, screenHeight / 2); // вариант 2, выделенный текст
-    context.fillText("You Died!", screenWidth / 2, screenHeight / 2);
-    context.font = "36px Arial";
-    context.strokeText("Press SPACE to restart", screenWidth / 2, screenHeight / 2 + 50);
+    context.strokeText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2);
+    context.fillText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2);
+    context.font = "26px Arial";
+    context.strokeText("Нажмите пробел, чтобы сыграть ещё", screenWidth / 2, screenHeight / 2 + 50);
     context.fillText(
-      "Press SPACE to restart",
+      "Нажмите пробел, чтобы сыграть ещё",
       screenWidth / 2,
       screenHeight / 2 + 50
     );
