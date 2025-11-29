@@ -74,7 +74,7 @@ class platform {
 
           if (this.moveTime === 0) {
             this.direction = "left";
-            this.moveTime = 6; 
+            this.moveTime = 6;
           }
         } else {
           this.x -= 1;
