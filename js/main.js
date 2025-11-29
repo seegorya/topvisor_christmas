@@ -167,15 +167,11 @@ function update() {
     context.lineWidth = 8;
     context.lineJoin="round";
     context.miterLimit=2;
-    context.strokeText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2);
-    context.fillText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2);
+    context.strokeText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2, screenWidth - 30);
+    context.fillText("Игра окончена (>_<)", screenWidth / 2, screenHeight / 2, screenWidth - 30);
     context.font = "26px Arial";
-    context.strokeText("Нажмите пробел, чтобы сыграть ещё", screenWidth / 2, screenHeight / 2 + 50);
-    context.fillText(
-      "Нажмите пробел, чтобы сыграть ещё",
-      screenWidth / 2,
-      screenHeight / 2 + 50
-    );
+    context.strokeText("Нажмите пробел, чтобы сыграть ещё", screenWidth / 2, screenHeight / 2 + 50, screenWidth - 30);
+    context.fillText("Нажмите пробел, чтобы сыграть ещё",screenWidth / 2,screenHeight / 2 + 50,screenWidth - 30);
   }
 
   if (leftKeyDown) {

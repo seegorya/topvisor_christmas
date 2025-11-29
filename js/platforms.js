@@ -74,7 +74,7 @@ class platform {
 
           if (this.moveTime === 0) {
             this.direction = "left";
-            this.moveTime = 6; // причина тряски
+            this.moveTime = 6; 
           }
         } else {
           this.x -= 1;
@@ -119,7 +119,7 @@ class platform {
           platforms[i].type = this.spawnplatform();
           platforms[i].powerup = 0;
           platforms[i].monster = 0;
-          platforms[i].speed = Math.random() * 2 + 1;
+          platforms[i].speed = Math.random() * 3 + 1;
 
           if (platforms[i].type != "break") {
             platforms[i].powerup = powerup();
