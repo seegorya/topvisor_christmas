@@ -133,9 +133,7 @@ platforms[0].powerup = 0;
 platformGo.platformsSet();
 
 function update() {
-   setTimeout(() => {
-    requestAnimationFrame(update);
-  }, 1000 / 60);
+  requestAnimationFrame(update)
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   for (var i = 0; i < platforms.length; i++) {
