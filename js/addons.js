@@ -1,9 +1,14 @@
 function powerup() {
-  var chances = { // обсудить частоту
+    var gift_chances = 20
+    if (score < 40000) {
+        gift_chances = 5
+    }
+
+  var chances = {
     spring: 30,
     shoes: 45,
     shield: 80,
-    pointup: 15
+    pointup: gift_chances
   };
 
   if (Math.round(Math.random() * chances["spring"]) === 0) {
